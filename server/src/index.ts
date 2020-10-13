@@ -35,7 +35,6 @@ app.delete('/api/removeItem',(req:Request, res: Response) => {
     if (!req.body.title){
         res.sendStatus(400);
     }else{
-        console.log(req.body.title);
         const didRemove: boolean = TodoListModel.removeItem(req.body.title);
         if (didRemove){
             res.sendStatus(200);
