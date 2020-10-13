@@ -1,6 +1,7 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 const App = () => {
+
   return (
     <div className="App">
      Bye
