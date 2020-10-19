@@ -1,4 +1,5 @@
 import express, { Request, Response } from 'express';
+import cors from 'cors';
 import { Maybe } from 'true-myth';
 import bodyParser from 'body-parser';
 import TodoList, { TodoItem } from './TodoListModel';
@@ -8,6 +9,8 @@ const TodoListModel = new TodoList();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
+
+app.use(cors());
 
 app.use('/api/getAll',(req: Request, res: Response) => {
     const items = TodoListModel.getAllItems();
